@@ -167,16 +167,16 @@ file that was distributed with this source code.
                                             {# TODO 表示名 #}
                                             <div class="col d-flex align-items-center">{{ ClassCategory.name }}</div>
                                             <div class="col-auto text-right">
-                                                <a class="btn btn-ec-actionIcon mr-3 action-up {% if loop.first %}disabled{% endif %}" href="" data-toggle="tooltip" data-placement="top" title="{{ 'admin.product.class_category.430'|trans }}">
+                                                <a class="btn btn-ec-actionIcon mr-2 action-up {% if loop.first %}disabled{% endif %}" href="" data-toggle="tooltip" data-placement="top" title="{{ 'admin.product.class_category.430'|trans }}">
                                                     <i class="fa fa-arrow-up fa-lg text-secondary"></i>
                                                 </a>
-                                                <a class="btn btn-ec-actionIcon mr-3 action-down {% if loop.last %}disabled{% endif %}" href="" data-toggle="tooltip" data-placement="top" title="{{ 'admin.product.class_category.431'|trans }}">
+                                                <a class="btn btn-ec-actionIcon mr-2 action-down {% if loop.last %}disabled{% endif %}" href="" data-toggle="tooltip" data-placement="top" title="{{ 'admin.product.class_category.431'|trans }}">
                                                     <i class="fa fa-arrow-down fa-lg text-secondary"></i>
                                                 </a>
-                                                <a class="btn btn-ec-actionIcon mr-3 action-edit" href="" data-toggle="tooltip" data-placement="top" title="{{ 'admin.product.class_category.432'|trans }}">
+                                                <a class="btn btn-ec-actionIcon mr-2 action-edit" href="" data-toggle="tooltip" data-placement="top" title="{{ 'admin.product.class_category.432'|trans }}">
                                                     <i class="fa fa-pencil fa-lg text-secondary"></i>
                                                 </a>
-                                                <a class="btn btn-ec-actionIcon mr-3" data-tooltip="tooltip" data-placement="top" title="{{ 'common.label.delete'|trans }}" data-toggle="modal" data-target="#delete_{{ ClassCategory.id }}">
+                                                <a class="btn btn-ec-actionIcon mr-2" data-tooltip="tooltip" data-placement="top" title="{{ 'common.label.delete'|trans }}" data-toggle="modal" data-target="#delete_{{ ClassCategory.id }}">
                                                     <i class="fa fa-close fa-lg text-secondary"></i>
                                                 </a>
                                                 <div class="modal fade" id="delete_{{ ClassCategory.id }}" tabindex="-1"

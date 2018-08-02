@@ -433,15 +433,15 @@ file that was distributed with this source code.
                                                     {{ Product.update_date|date_format }}
                                                 </td>
                                                 <td class="align-middle pr-3" colspan="3">
-                                                    <div class="row">
-                                                        <div class="col text-center" data-toggle="tooltip"
+                                                    <div class="text-right">
+                                                        <div class="px-1 d-inline-block" data-toggle="tooltip"
                                                              data-placement="top"
                                                              title="{{ 'admin.product.index.display'|trans }}"><a class="btn btn-ec-actionIcon"
                                                                            href="{{ url('product_detail', {id:Product.id}) }}"
                                                                            target="_blank"><i
                                                                         class="fa fa-eye fa-lg text-secondary"
                                                                         aria-hidden="true"></i></a></div>
-                                                        <div class="col text-center" data-toggle="tooltip"
+                                                        <div class="px-1 d-inline-block" data-toggle="tooltip"
                                                              data-placement="top"
                                                              title="{{ 'admin.product.index.duplicate'|trans }}">
                                                             <a href="#" class="btn btn-ec-actionIcon"
@@ -484,7 +484,7 @@ file that was distributed with this source code.
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col text-center" data-toggle="tooltip"
+                                                        <div class="px-1 d-inline-block" data-toggle="tooltip"
                                                              data-placement="top"
                                                              title="{{ 'admin.product.index.abolition'|trans }}"><a class="btn btn-ec-actionIcon" data-toggle="modal"
                                                                            data-target="#discontinuance_{{ Product.id }}"><i

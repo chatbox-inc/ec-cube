@@ -525,18 +525,18 @@ file that was distributed with this source code.
                                 <table class="table table-sm" id="search_result">
                                     <thead>
                                     <tr>
-                                        <th class="border-top-0 pt-2 pb-2 text-center pl-3">
+                                        <th class="border-top-0 pt-2 pb-2 pl-3">
                                             <input type="checkbox" id="toggle_check_all" name="filter" value="open">
                                         </th>
-                                        <th class="border-top-0 pt-2 pb-2 text-center">{{ 'admin.order.index.th_order_description'|trans }}</th>
-                                        <th class="border-top-0 pt-2 pb-2 text-center">{{ 'admin.order.index.th_payment'|trans }}</th>
-                                        <th class="border-top-0 pt-2 pb-2 text-center">{{ 'admin.order.index.th_order_status'|trans }}</th>
-                                        <th class="border-top-0 pt-2 pb-2 text-center">{{ 'admin.order.index.th_payment_total'|trans }}</th>
-                                        <th class="border-top-0 pt-2 pb-2 text-center">{{ 'admin.order.index.th_message'|trans }}</th>
-                                        <th class="border-top-0 pt-2 pb-2 text-center">{{ 'admin.order.index.th_shipping_status'|trans }}</th>
-                                        <th class="border-top-0 pt-2 pb-2 text-center">{{ 'admin.order.index.th_tracking_number'|trans }}</th>
-                                        <th class="border-top-0 pt-2 pb-2 text-center">{{ 'admin.order.index.th_delivery_address'|trans }}</th>
-                                        <th class="border-top-0 pt-2 pb-2 text-center pr-3"></th>
+                                        <th class="border-top-0 pt-2 pb-2">{{ 'admin.order.index.th_order_description'|trans }}</th>
+                                        <th class="border-top-0 pt-2 pb-2">{{ 'admin.order.index.th_payment'|trans }}</th>
+                                        <th class="border-top-0 pt-2 pb-2">{{ 'admin.order.index.th_order_status'|trans }}</th>
+                                        <th class="border-top-0 pt-2 pb-2">{{ 'admin.order.index.th_payment_total'|trans }}</th>
+                                        <th class="border-top-0 pt-2 pb-2">{{ 'admin.order.index.th_message'|trans }}</th>
+                                        <th class="border-top-0 pt-2 pb-2">{{ 'admin.order.index.th_shipping_status'|trans }}</th>
+                                        <th class="border-top-0 pt-2 pb-2">{{ 'admin.order.index.th_tracking_number'|trans }}</th>
+                                        <th class="border-top-0 pt-2 pb-2">{{ 'admin.order.index.th_delivery_address'|trans }}</th>
+                                        <th class="border-top-0 pt-2 pb-2 pr-3"></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -556,27 +556,27 @@ file that was distributed with this source code.
                                     {% for Order in pagination %}
                                         {% for Shipping in Order.Shippings %}
                                             <tr>
-                                                <td class="align-middle text-center pl-3">
+                                                <td class="align-middle pl-3">
                                                     <input type="checkbox" id="check_{{ Shipping.id }}" data-id="{{ Shipping.id }}" name="ids[]" value="{{ Shipping.id }}"
                                                            data-preview-notify-mail-url="{{ url('admin_shipping_preview_notify_mail', { id: Shipping.id}) }}"
                                                            data-notify-mail-url="{{ url('admin_shipping_notify_mail', { id: Shipping.id}) }}"
                                                            data-update-status-url="{{ url('admin_shipping_update_order_status', { id: Shipping.id}) }}"
                                                     />
                                                 </td>
-                                                <td class="align-middle text-left">
+                                                <td class="align-middle">
                                                     <a class="action-edit" href="{{ url('admin_order_edit', { id : Order.id }) }}">{{ Order.order_no }}<br>{{ Order.name01 ~ Order.name02 }}<br>{{ Order.order_date|date_min }}</a>
                                                 </td>
-                                                <td class="align-middle text-center">
+                                                <td class="align-middle">
                                                     {{ Order.payment_method }}
                                                 </td>
-                                                <td class="align-middle text-center">
+                                                <td class="align-middle">
                                                     <span class="badge {{ attribute(cssClassStatus, Order.OrderStatus.id) }}">{{ Order.OrderStatus }}</span>
                                                 </td>
-                                                <td class="align-middle text-right">
+                                                <td class="align-middle">
                                                     {{ Order.payment_total|price }}<br>
                                                     {{ Order.payment_date ? Order.payment_date|date_day : 'admin.order.index.not_payment'|trans }}
                                                 </td>
-                                                <td class="align-middle text-center">
+                                                <td class="align-middle">
                                                     {% if Order.message is not empty %}
                                                         <a class="btn btn-ec-actionIcon" href="{{ url('admin_order_edit', { id : Order.id }) }}#order_message" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ Order.message }}" aria-describedby="tooltip819464">
                                                             <i class="fa fa-commenting fa-lg text-secondary" aria-hidden="true"></i>
@@ -587,7 +587,7 @@ file that was distributed with this source code.
                                                         </a>
                                                     {% endif %}
                                                 </td>
-                                                <td class="align-middle text-center">
+                                                <td class="align-middle">
                                                     {% if Order.is_multiple %}
                                                         <a href="{{ url('admin_shipping_edit', { id: Order.id }) }}">
                                                             {% if Shipping.shipping_date %}
@@ -610,13 +610,13 @@ file that was distributed with this source code.
                                                 </span>
                                                     </div>
                                                 </td>
-                                                <td class="align-middle text-center">
+                                                <td class="align-middle">
                                                     {{ Shipping.name01 ~ Shipping.name02 }}<br>
                                                     {{ Shipping.Pref.name }}
                                                 </td>
-                                                <td class="align-middle pr-3 text-center">
-                                                    <div class="row justify-content-end">
-                                                        <div class="col-auto text-center">
+                                                <td class="align-middle pr-3">
+                                                    <div class="text-right">
+                                                        <div class="px-1 d-inline-blockr">
                                                             <a class="btn btn-ec-actionIcon confirmationModal"
                                                                data-type="mail" data-bulk-update="false"
                                                                data-preview-notify-mail-url="{{ url('admin_shipping_preview_notify_mail', { id: Shipping.id}) }}"
@@ -624,12 +624,12 @@ file that was distributed with this source code.
                                                                 <i class="fa fa-send fa-lg text-secondary" aria-hidden="true"></i>
                                                             </a>
                                                         </div>
-                                                        <div class="col-auto text-center">
+                                                        <div class="px-1 d-inline-blockr">
                                                             <a class="btn btn-ec-actionIcon pdf-print" href="{{ url('admin_order_export_pdf') }}?ids[]={{ Order.id }}" data-toggle="tooltip" data-placement="top" title data-original-title="{{ 'admin.order.index.btn_form'|trans }}">
                                                                 <i class="fa fa-table fa-lg text-secondary" aria-hidden="true"></i>
                                                             </a>
                                                         </div>
-                                                        <div class="col-auto text-center">
+                                                        <div class="px-1 d-inline-blockr">
                                                             <a class="btn btn-ec-actionIcon confirmationModal" href="javascript:;"
                                                                data-id="{{ Shipping.id }}" data-type="status" data-bulk-update="false"
                                                                data-update-status-id="{{ constant('Eccube\\Entity\\Master\\OrderStatus::DELIVERED') }}"
